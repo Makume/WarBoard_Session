@@ -1,4 +1,6 @@
-if not WarBoard_Session then WarBoard_Session = {} end
+if not WarBoard_Session then 
+	WarBoard_Session = {} 
+end
 local WarBoard_Session = WarBoard_Session
 
 local GetGameTime, towstring, FormatClock, Tooltips = GetGameTime, towstring, TimeUtils.FormatClock, Tooltips;
@@ -33,7 +35,6 @@ local settings = {
 	timeToRenown = L"-",
 	xpInUse = false,
 	renownInUse = false,
-	version = L"0.6"
 }
 
 function WarBoard_Session.Initialize()
@@ -247,6 +248,12 @@ function WarBoard_Session.OnRClick()
 end
 
 function WarBoard_Session.OnMouseOver()
+	Tooltips.CreateTextOnlyTooltip("WarBoard_Session", nil)
+	Tooltips.AnchorTooltip( WarBoard.GetModToolTipAnchor("WarBoard_Session"))
+	Tooltips.SetUpdateCallback(WarBoard_Session.GetSessionData)
+end
+
+function WarBoard_Session.GetSessionData()
 	if settings.xpInUse then
 		WarBoard_Session.showTimeToRank();
 	end
@@ -254,9 +261,6 @@ function WarBoard_Session.OnMouseOver()
 		WarBoard_Session.showTimeToRenown();
 	end
 	WarBoard_Session.UpdateStuff();
-
-	Tooltips.CreateTextOnlyTooltip( "WarBoard_Session", nil)
-	Tooltips.AnchorTooltip( WarBoard.GetModToolTipAnchor( "WarBoard_Session" ) )
 
 	local toolTipStringXPNeeded = L"";
 	local toolTipStringRenownNeeded = L"";
