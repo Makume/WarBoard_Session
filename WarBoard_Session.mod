@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ModuleFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <UiMod name="WarBoard_Session" version="0.7.0" date="15/05/2024" >
+    <UiMod name="WarBoard_Session" version="0.7.1" date="15/05/2024" >
         <Author name="Lyb" email="lybe86@gmail.com" />
         <Description text="A session stats mod for WarBoard, borrowed heavily from waaghbar ranktimer. Thanks Computerpunk for all the tips so far" />
         <VersionSettings gameVersion="1.4.8" />
